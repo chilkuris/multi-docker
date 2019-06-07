@@ -9,10 +9,10 @@ script:
   - docker run chilkuris/react-test npm run test -- --coverage
 
 after_success:
-  - docker build -t chilkuris/multi-client ./client
-  - docker build -t chilkuris/multi-nginx ./nginx
-  - docker built -t chilkuris/multi-server ./server
-  - docker build -t chilkuris/multi-worker ./worker
+  - docker build -t pratsoff/multi-client ./client
+  - docker build -t pratsoff/multi-nginx ./nginx
+  - docker built -t pratsoff/multi-server ./server
+  - docker build -t pratsoff/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
